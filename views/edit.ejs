@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edição das informações</title>
+    </head>
+    <body>
+        <h2>Editar Registro</h2>
+
+        <% data.forEach(person => { %>
+            <form action="/edit/<%= person._id %>" method="post">
+                <p class="edit-name">
+                    <label for="input-name">Nome:</label> <input type="text" value="<%= person.name %>" name="name" id="input-name" placeholder="Jaiminho">
+                </p>
+            
+                <p class="edit-surname">
+                    <label for="input-surname">Sobrenome:</label> <input type="text" value="<%= person.surname %>" name="surname" id="input-surname" placeholder="Faria">
+                </p>
+                
+                <p class="edit-age">
+                    <label for="input-age">Idade:</label> <input type="number" value="<%= person.age %>" name="age" id="input-age" placeholder="69">
+                </p>
+                
+                <p class="edit-city">
+                    <label for="input-city">Cidade:</label> <input type="text" value="<%= person.city %>" name="city" id="input-city" placeholder="Maranguapi">
+                </p>
+                
+                <p class="edit-state">
+                    <label for="input-state">Estado:</label> <input type="text" value="<%= person.state %>" name="state" id="input-state" placeholder="Acre">
+                </p>
+
+                <button><a href="/show">Todos</a></button>
+                <button type="submit">Editar</button>
+            </form>
+        <% }) %> 
+    </body>
+</html>

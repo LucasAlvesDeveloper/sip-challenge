@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resultado do Cadastro</title>
+    </head>
+    <body>
+    <h2>Registros<h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Sobrenome</td>
+                    <td>Cidade</td>
+                    <td>Estado</td>
+                </tr>
+            </thead>
+            <tbody>
+            <% data.forEach(person => { %>
+                <tr>
+                    <td><%= person.name %></td>
+                    <td><%= person.surname %></td>
+                    <td><%= person.city %></td>
+                    <td><%= person.state %></td>
+                    <td>
+                        <button><a href="/edit/<%= person._id %>">Editar</a></button> -
+                        <button><a href="/delete/<%= person._id %>">Deletar</a></button>
+                    </td>
+                </tr>
+            <% }) %>
+            </tbody>
+        </table>
+        <button><a href="/">Cadastrar Novamente</a></button>
+    </body>
+</html>
